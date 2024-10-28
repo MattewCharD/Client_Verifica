@@ -15,6 +15,8 @@ public class Main {
         
         Socket s = new Socket("localhost",3000);
         System.out.println("Connessione effettuata. Digita ESCI per uscire.  \n" );
+        System.out.println("Inserisci la nota da memorizzare o digita LISTA per visualizzare le note salvate.\n");
+        
         
         BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
         DataOutputStream out = new DataOutputStream(s.getOutputStream());
@@ -22,6 +24,15 @@ public class Main {
 
         do {
             message = sc.nextLine();
+
+            switch (message) {
+                case "value":
+                    
+                    break;
+            
+                default:
+                    break;
+            }
             
             out.writeBytes( message + "\n");
             String stringaRicevuta = in.readLine();
